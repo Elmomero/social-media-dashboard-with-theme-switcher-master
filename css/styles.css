@@ -75,10 +75,11 @@ body.dark h2 {
 }
 header {
   position: relative;
-  height: 300px;
+  height: 250px;
   padding-top: 20px;
 }
 h1 {
+  font-size: 6.2vw;
   margin-bottom: 10px;
   color: var(--Very-Dark-Blue);
 }
@@ -109,13 +110,13 @@ header p {
 .btnDark::after {
   content: "";
   display: block;
-  width: 30px;
-  height: 30px;
+  width: 21px;
+  height: 21px;
   position: absolute;
   background: #f1f1f1;
-  top: 0;
-  left: 0;
-  right: unset;
+  top: 4px;
+  right: 3px;
+  left: unset;
   border-radius: 50%;
   transition: all 300ms ease;
 }
@@ -125,16 +126,16 @@ header p {
 }
 
 .btnDark.active::after {
-  right: 0;
-  left: unset;
+  right: unset;
+  left: 4px;
+  background-color: var(--Dark-Desaturated-Blue);
 }
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2vw 2vw;
   /* padding: 1vw; */
-  transform: translateY(-120px);
-
+  transform: translateY(-70px);
 }
 .stat-container {
   position: relative;
@@ -205,6 +206,7 @@ header p {
 }
 .overview {
   transform: translateY(-100px);
+  margin-bottom: 80px;
 }
 .overview h2 {
   font-size: 2em;
@@ -212,10 +214,9 @@ header p {
 }
 .oContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2vw 2.4vw;
   /* padding: 1vw; */
-
 }
 .oView {
   background-color: var(--Light-Grayish-Blue);
@@ -238,14 +239,32 @@ header p {
 .oView div img {
   transform: translateY(-3px);
 }
-@media screen and (max-width:770px){
 
-  .darkDiv{
+@media screen and (max-width: 440px) {
+  .stats {
+    transform: translateY(-70px);
+    gap: 5vw 2vw;
+  }
+  .oContainer {
+    gap: 5vw 2.4vw;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .stats {
+    transform: translateY(-20px);
+  }
+}
+@media screen and (max-width: 770px) {
+  .overview {
+    transform: translateY(0px);
+  }
+  .darkDiv {
     position: relative;
     justify-content: space-between;
     transform: translateY(-20px);
   }
-  .darkDiv::after{
+  .darkDiv::after {
     width: 100%;
     height: 1px;
     content: "";
@@ -255,11 +274,14 @@ header p {
     background-color: var(--Dark-Grayish-Blue);
   }
 }
-@media screen and (max-width:440px) {
-  .stats{
-    transform: translateY(-70px);
+@media screen and (min-width: 771px) {
+  h1 {
+    font-size: 4vw;
+  }
+  .stats {
+    transform: translateY(-20px);
   }
   .overview {
-    transform: translateY(-50px);
-  }
-}
+    transform: translateY(0px);
+  }}
+
